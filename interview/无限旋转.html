@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>旋转</title>
+    <style>
+        /*自定义动画类----顺时针旋转（使用这个动画的时候才设置动画执行时间）*/
+        @-webkit-keyframes changeright {
+
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        /*自定义动画类----逆时针旋转（使用这个动画的时候才设置动画执行时间）*/
+        @-webkit-keyframes changeleft {
+
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            50% {
+                -webkit-transform: rotate(-180deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(-360deg);
+            }
+        }
+
+        .logo1 img {
+            -webkit-animation: changeright 6s linear infinite;
+        }
+
+        .logo2 img {
+            -webkit-animation: changeleft 6s linear infinite;
+        }
+
+        /*---------自定义普通旋转类（就是引用刚才自定义changeright的动画）------*/
+        .imgrotate_common {
+            -webkit-animation: changeright 6s linear infinite;
+        }
+
+        /*---------自定义快速旋转（就是引用刚才自定义changeright的动画）------*/
+        .imgrotate_rotate {
+            -webkit-animation: changeright 3s linear infinite;
+        }
+
+        .box span {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 12px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="logo1">
+    <img src="./../img/img.png" alt=""/>
+    <img src="./../img/img.png" alt=""/>
+    <img src="./../img/img.png" alt=""/>
+</div>
+<hr/>
+<div class="logo2">
+    <img src="./../img/img.png" alt=""/>
+    <img src="./../img/img.png" alt=""/>
+    <img src="./../img/img.png" alt=""/>
+</div>
+<hr/>
+
+<!--<h3>(模拟接口返回数据)根据状态显示不同动画效果</h3>-->
+<!--<div class="box">-->
+<!--  <span></span><span><img src=""/></span>-->
+<!--</div>-->
+
+
+<!--<script src="jquery.min.js"></script>-->
+<!--<script>-->
+<!--  //			适用场景&#45;&#45;&#45;&#45;根据状态显示不同类型-->
+<!--  //			假装是接口返回的数据-->
+<!--  var arr = [-->
+<!--    {choose:"禁止",type:0},-->
+<!--    {choose:"普通",type:2},-->
+<!--    {choose:"快速",type:3}-->
+<!--  ]-->
+<!--  var shtml='';-->
+<!--  if(arr && arr.length>0){-->
+<!--    for(var i=0,len=arr.length;i<len;i++){-->
+<!--      if(arr[i].type == 2){-->
+<!--        shtml+='<span>'+arr[i].choose+'</span><span><img class="imgrotate_common" src="logo_logo.png"/></span>';-->
+<!--      }else if(arr[i].type == 3){-->
+<!--        shtml+='<span>'+arr[i].choose+'</span><span><img class="imgrotate_rotate" src="logo_logo.png"/></span>';-->
+<!--      }else{-->
+<!--        shtml+='<span>'+arr[i].choose+'</span><span><img src="logo_logo.png"/></span>';-->
+<!--      }-->
+<!--    }-->
+<!--    $('.box').html(shtml);-->
+<!--  }-->
+<!--</script>-->
+</body>
+</html>

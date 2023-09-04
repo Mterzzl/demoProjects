@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="father">
+      <a id="child" href="#" >
+<!--          onClick="event.cancelBubble = true"-->
+<!--div,a点击会打印两个-->
+        123
+      </a>
+    </div>
+    <script>
+        document.getElementById("father").addEventListener("click",function (e){
+            console.log("father")
+        })
+        document.getElementById("child").addEventListener("click",function (e){
+            console.log("child")
+        })
+    </script>
+</body>
+</html>

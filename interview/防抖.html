@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="height: 2000px"></div>
+<script>
+  function debounce(fn){
+    let timer = null //借助闭包
+    return function() {
+      if(timer){
+        clearTimeout(timer)
+      }
+      timer = setTimeout(fn,1000)
+    }
+  }
+  function showTop  () {
+      const scrollTop = document.documentElement.scrollTop;
+      console.log('滚动条位置：' + scrollTop);
+  }
+  window.onscroll = debounce(showTop)
+</script>
+</body>
+</html>

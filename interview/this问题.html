@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<SCRIPT>
+    // let obj = {
+    //     fn1:function() {
+    //         console.log(this);
+    //     },
+    //     fn2:function(){
+    //         fn3();
+    //     }
+    // }
+    // function fn3(config) {
+    //     console.log(this);
+    // }
+    // fn3();//this->window
+    // obj.fn1();//this->obj
+    // obj.fn2();//this->window
+    function a(){
+        console.log(this)//window
+        function b(){
+            console.log(this)//window
+        }
+        b()
+    }
+    a()
+</SCRIPT>
+</body>
+</html>
+
+

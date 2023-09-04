@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*var name = 222;
+        var a = {
+            name: 111,
+            say: function () {
+                console.log(this.name);
+            },
+        };
+
+        var fun = a.say;
+        fun(); // 在函数中直接使用, this 指向window 所以在全局中 name=222 所以输出222
+        a.say() // 此时是a调用了say() , 所以say方法里面的this指向 a, a 里面的name=111 所以输出111
+
+        var b = {
+            name: 333,
+            say: function (fun) {
+                fun();
+            },
+        };
+        b.say(a.say); // 此时是b调用了say() 而b.say()中的fun()还是在函数中直接使用 所以输出222
+
+        b.say = a.say;
+        b.say(); // 由于上一行 把a.say赋值给了b.say 而b.say()是b调用了say, 所以此时的this指向b 所以输出333*/
+        /*for (var i = 0;i < 5;i++){
+            setTimeout(function () {
+                console.log(i)
+            },1000)
+        }*/
+        /*for (var i = 1;i<5;i++){
+            (function(i) {
+                setTimeout(function (){
+                    console.log(i)
+                },1000)
+            })(i)
+        }*/
+        /*var b = [1,"21"]
+        console.log(b)//Array*/
+        /*const c = function () {
+
+        }
+        console.log(typeof c === 'function')//true -function*/
+        // (function (){
+        //     var a = 1
+        //     function test() {
+        //         console.log(a)
+        //     }
+        //     window.a = function (){
+        //         return{test:test}
+        //     }
+        // })()
+        // a().test()
+
+        // f()
+        //
+        // function f() {
+        //     console.log(a)
+        // }
+        // var a =1
+        // var a = 10
+        // var bar = function (x) {
+        //     var b = 5
+        //     foo(x + b)
+        // }
+        // var foo = function (y) {
+        //     var c = 5
+        //     console.log(a + c + y)
+        // }
+        // bar(10)
+        // var obj={
+        //     fn2:function (){
+        //         console.log(obj.fn2)
+        //     }
+        // }
+        // obj.fn2()
+        /*function f(n, o) {
+            console.log(o)
+            return {
+                fun:function (m){
+                    return f(m,n)
+                }
+            }
+        }*/
+        //var a = f(0);a.fun(1); a.fun(2); a.fun(3);
+        //var b = f(0).fun(1).fun(2).fun(3)
+        // var c = f(0).fun(1)
+        // c.fun(2)
+        // c.fun(3)
+        /*const fn1 = x => (x);
+        const fn2 = x => {return x};
+        const fn3 = x => ({x});
+        console.log(fn1(1),fn2(1),fn3(1))//1 UNDIFINED Object*/
+        function foo() {
+            console.log("first");
+            setTimeout(( function(){
+                console.log( 'second' );
+            }),5000);
+        }
+
+        for (var i = 0; i < 10; i++) {
+            foo();
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+      //还有lodash _.cloneDeep()
+    const obj = {
+      name :"zhangsan",
+      family :{
+        baby :"pink",
+      }
+    }
+    console.log(obj)
+    a = JSON.parse(JSON.stringify(obj))
+    a.name = "lisi"
+    console.log(a)
+    console.log(obj)
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<head>
+  <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title> perfect*</title>
+  <style>
+    /*.tr{
+        width:0;
+        height:0;
+        border: 50px solid;
+        border-color: transparent transparent #ccc transparent;
+
+    }*/
+
+    .ts{
+      position: relative;
+      margin-top: 50px;
+      margin-left: 50px;
+      padding-left:20px ;
+      width: 300px;
+      line-height: 2;
+      background:blueviolet;
+      color: #fff;
+    }
+    .ts::before{
+      content:'';
+      position: absolute;
+      border: 8px solid;
+      border-color: transparent blueviolet transparent transparent;
+      left: -16px;
+      top: 8px;
+    }
+  </style>
+</head>
+<body>
+<div class="ts">这是一个对话框！！</div>
+</body>
+

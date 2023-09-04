@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="./手写Promise.js"></script>
+</head>
+<body>
+  <script>
+    /*let p = new MyPromise((resolve, reject)=>{
+      //reject("error")
+      resolve("ok")
+      // setTimeout(()=>{
+      //   reject("ok")
+      // },1000)
+    });*/
+    /*const res = p.then(value=>{
+      //console.log("right"+value)
+      // return new Promise((resolve, reject)=>{
+      //   console.log("right"+value)
+      // })
+      //throw "Fail"
+    },reason=>{
+      //console.log("wrong"+reason)
+      //throw "Fail"
+    })*/
+
+    // p.then(value=>{
+    //   // console.log(111)
+    //   // throw "err"
+    // }).then(value =>{
+    //   console.log(222)
+    // }).then(value =>{
+    //   console.log(333)
+    // }).catch(err =>{
+    //   console.log(err)
+    // })
+
+    //console.log(res)
+    // let res = p.catch(reason =>{
+    //   console.log(reason)
+    // })
+    //console.log(res)
+    // const p = MyPromise.resolve("OK")
+    // console.log(p)
+
+    let p1 = new MyPromise((resolve, reject)=>{
+      setTimeout(()=>{
+        resolve("ok")
+      })
+    })
+    let p2 = MyPromise.resolve("p2")
+    let p3 = MyPromise.resolve("p3")
+    let result = MyPromise.race([p1,p2,p3])
+    console.log(result)
+
+    // new MyPromise((resolve, reject)=>{
+    //   // reject("ok")
+    //   // console.log(111)
+    //   setTimeout(()=>{
+    //     reject("ok")
+    //     console.log(111)
+    //   },0)
+    // }).then(value=>{
+    //   console.log(222)
+    // },reason=>{
+    //   console.log(444)
+    // })
+    // console.log(333)
+  //333 等 111 444
+
+
+    // new Promise((resolve,reject)=>{
+    //   console.log('Promise1')
+    //   resolve()
+    // }).then(()=>{
+    //   console.log('Promise2')
+    // })
+    // setTimeout(()=>{
+    //   console.log('setTimeout1')
+    // },0)
+    // console.log(111)
+    //pr1 111 pr2 set1
+    //111放在promise前 111 pr1 pr2 set1
+  </script>
+</body>
+</html>
